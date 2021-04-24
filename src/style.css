@@ -244,6 +244,8 @@ nav a:hover {
 
 .gallery__text {
   font-size: 1.2rem;
+  text-align: center;
+  padding-top: 48%;
 }
 
 .contacts {
