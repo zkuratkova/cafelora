@@ -37,12 +37,28 @@ orderBtnElm.addEventListener('click', () => {
 });
 
 const layers = [
-  { color: '#feeeca', label: 'mléčná pěna' },
-  { color: '#fed7b0', label: 'teplé mléko' },
-  { color: '#613916', label: 'espresso' },
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
 ];
 
-drinkInfoElm.innerHTML +=
-  Layer({ color: '#feeeca', label: 'mléčná pěna' }) +
-  Layer({ color: '#fed7b0', label: 'teplé mléko' }) +
-  Layer({ color: '#613916', label: 'espresso' });
+const layerList = (props) => {
+  let result = '';
+
+  props.items.forEach((item) => {
+    result += Layer(item);
+    console.log(result);
+  });
+  return result;
+};
+
+drinkInfoElm.innerHTML += layerList({ items: layers });
